@@ -74,13 +74,13 @@ export default function Home() {
       <section className="py-8 px-4 md:px-8 bg-gray-50">
         <AnimatedCarousel
           images={[
-            'https://source.unsplash.com/1200x800/?building,cleaning&sig=1',
-            'https://source.unsplash.com/1200x800/?building,interior&sig=2',
-            'https://source.unsplash.com/1200x800/?office,cleaning&sig=3',
-            'https://source.unsplash.com/1200x800/?hotel,lobby&sig=4',
-            'https://source.unsplash.com/1200x800/?apartment,clean&sig=5',
-            'https://source.unsplash.com/1200x800/?industrial,warehouse&sig=6',
-            'https://source.unsplash.com/1200x800/?modern,building&sig=7',
+            'imports/images/commercial-building-cleaning.jpg',
+            'imports/images/hotel-lobby-cleaning.jpg',
+            'imports/images/apartment-cleaning.jpg',
+            'imports/images/industrial-warehouse-cleaning.jpg',
+            'imports/images/deep-cleaning-service.jpg',
+            'imports/images/industrial-warehouse-cleaning.jpg',
+            'imports/images/modern-building.jpg',
           ]}
         />
       </section>
