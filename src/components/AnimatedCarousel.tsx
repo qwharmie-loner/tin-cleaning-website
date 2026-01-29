@@ -57,7 +57,6 @@ export default function AnimatedCarousel({ images, interval = 2800 }: Props) {
 
   return (
     <div ref={containerRef} className="max-w-6xl mx-auto my-12">
-      <h2 className="text-3xl md:text-4xl font-bold text-center mb-6 text-gray-800">Our Work</h2>
       <div className="relative h-64 md:h-96 overflow-hidden rounded-xl shadow-lg">
         {srcList.map((src, i) => (
           <img
