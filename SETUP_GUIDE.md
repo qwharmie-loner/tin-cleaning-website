@@ -91,7 +91,7 @@ create policy "Allow authenticated reads" on contacts
 
 4. **Get your credentials**:
    - Go to **Settings → API**
-   - Copy your **Project URL** (looks like `https://xxxx.supabase.co`)
+   - Copy your **Project URL** (looks like `https://zboqvbnfgxtxrbxcgzjl.supabase.co`)
    - Copy your **anon public** key
 
 ### Step 2: Configure Email (Nodemailer with Gmail)
