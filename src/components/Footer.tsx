@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Facebook, Twitter, Instagram, Linkedin } from 'lucide-react';
+import { Facebook, Instagram } from 'lucide-react';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -11,7 +11,7 @@ export default function Footer() {
         <div className="grid md:grid-cols-4 gap-8 mb-12">
           {/* About Section */}
           <div>
-            <h3 className="text-xl font-bold mb-4">TIN GROUP SERVICE</h3>
+            <h3 className="text-xl font-bold mb-4">TIN GROUP SERVICE KFT</h3>
             <p className="text-gray-400 text-sm">
               Clean Spaces, Happy Clients! Professional cleaning services for hotels, offices, apartments, industrial facilities, and commercial dishwashing. Eco-friendly solutions for a cleaner tomorrow.
             </p>
@@ -55,17 +55,19 @@ export default function Footer() {
         {/* Social Links */}
         <div className="border-t border-gray-700 pt-8 mb-8">
           <div className="flex justify-center gap-6 mb-8">
-            <a href="#" className="text-gray-400 hover:text-white transition" aria-label="Facebook">
+            <a href="https://www.facebook.com/profile.php?id=61586944482307" className="text-gray-400 hover:text-white transition" aria-label="Facebook">
               <Facebook size={20} />
             </a>
-            <a href="#" className="text-gray-400 hover:text-white transition" aria-label="Twitter">
-              <Twitter size={20} />
+
+            <a href="https://www.tiktok.com/@tingroupservicekft" className="text-gray-400 hover:text-white transition" aria-label="TikTok">
+              {/* Inline TikTok SVG */}
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 48 48" fill="currentColor" aria-hidden>
+                <path d="M33.5 14.3v10.2a9.2 9.2 0 1 1-9.2-9.2v3.6a5.6 5.6 0 1 0 5.6 5.6V14.3h3.6z" />
+              </svg>
             </a>
-            <a href="#" className="text-gray-400 hover:text-white transition" aria-label="Instagram">
+
+            <a href="https://www.instagram.com/tingroupservicekft" className="text-gray-400 hover:text-white transition" aria-label="Instagram">
               <Instagram size={20} />
-            </a>
-            <a href="#" className="text-gray-400 hover:text-white transition" aria-label="LinkedIn">
-              <Linkedin size={20} />
             </a>
           </div>
 
