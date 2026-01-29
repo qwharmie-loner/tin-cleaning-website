@@ -21,7 +21,7 @@ export default function Home() {
           <p className="text-lg md:text-xl mb-8 text-blue-100">Professional cleaning services</p>
           <Link href="/contact">
             <button className="bg-white text-blue-600 px-8 py-3 rounded-lg font-bold hover:bg-blue-50 transition">
-              Get Your Free Quote Today
+              Request Our Services Today
             </button>
           </Link>
         </div>
