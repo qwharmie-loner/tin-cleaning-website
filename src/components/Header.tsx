@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 
@@ -14,8 +15,9 @@ export default function Header() {
   return (
     <header className="bg-white shadow-md">
       <nav className="max-w-6xl mx-auto px-4 md:px-8 py-4 flex justify-between items-center">
-        <Link href="/" className="font-bold text-2xl text-blue-600">
-          TIN GROUP
+        <Link href="/" className="flex items-center gap-3">
+          <Image src="/images/logo.png" alt="TIN GROUP logo" width={56} height={56} className="rounded" />
+          <span className="font-bold text-2xl text-blue-600">TIN GROUP</span>
         </Link>
 
         {/* Desktop Navigation */}

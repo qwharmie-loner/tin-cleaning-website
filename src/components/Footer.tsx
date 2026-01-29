@@ -11,7 +11,10 @@ export default function Footer() {
         <div className="grid md:grid-cols-4 gap-8 mb-12">
           {/* About Section */}
           <div>
-            <h3 className="text-xl font-bold mb-4">TIN GROUP SERVICE KFT</h3>
+            <div className="flex items-center gap-4 mb-4">
+              <img src="/images/logo.png" alt="TIN GROUP logo" className="w-14 h-14 rounded" />
+              <h3 className="text-xl font-bold">TIN GROUP SERVICE KFT</h3>
+            </div>
             <p className="text-gray-400 text-sm">
               Clean Spaces, Happy Clients! Professional cleaning services for hotels, offices, apartments, industrial facilities, and commercial dishwashing. Eco-friendly solutions for a cleaner tomorrow.
             </p>
