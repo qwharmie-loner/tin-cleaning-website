@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { CheckCircle, Star, Users } from 'lucide-react';
 
 import AnimatedServiceText from '@/components/AnimatedServiceText';
+import AnimatedCarousel from '@/components/AnimatedCarousel';
 
 export default function Home() {
   return (
@@ -9,7 +10,7 @@ export default function Home() {
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-yellow-400 via-blue-600 to-blue-800 text-white py-20 px-4 md:px-8">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6">TIN GROUP SERVICE</h1>
+          <h1 className="text-5xl md:text-6xl font-bold mb-6">TIN GROUP SERVICE KFT</h1>
           <p className="text-xl md:text-2xl mb-4 text-blue-100">
             <AnimatedServiceText 
               englishText="Clean Spaces, Happy Clients !" 
@@ -67,6 +68,21 @@ export default function Home() {
             </div>
           </div>
         </div>
+      </section>
+
+      {/* Animated Gallery (starts rotating when scrolled into view) */}
+      <section className="py-8 px-4 md:px-8 bg-gray-50">
+        <AnimatedCarousel
+          images={[
+            'https://source.unsplash.com/1200x800/?building,cleaning&sig=1',
+            'https://source.unsplash.com/1200x800/?building,interior&sig=2',
+            'https://source.unsplash.com/1200x800/?office,cleaning&sig=3',
+            'https://source.unsplash.com/1200x800/?hotel,lobby&sig=4',
+            'https://source.unsplash.com/1200x800/?apartment,clean&sig=5',
+            'https://source.unsplash.com/1200x800/?industrial,warehouse&sig=6',
+            'https://source.unsplash.com/1200x800/?modern,building&sig=7',
+          ]}
+        />
       </section>
 
       {/* CTA Section */}
