@@ -16,7 +16,7 @@ export default function Header() {
     <header className="bg-white shadow-md">
       <nav className="max-w-6xl mx-auto px-4 md:px-8 py-4 flex justify-between items-center">
         <Link href="/" className="flex items-center gap-3">
-          <Image src="/images/logo.png" alt="TIN GROUP logo" width={56} height={56} className="rounded" />
+          <Image src="/images/logo.png" alt="TIN GROUP logo" width={88} height={88} className="rounded shadow-lg border-4 border-yellow-400 bg-white p-1" />
           <span className="font-bold text-2xl text-blue-600">TIN GROUP</span>
         </Link>
 

@@ -12,7 +12,7 @@ export default function Footer() {
           {/* About Section */}
           <div>
             <div className="flex items-center gap-4 mb-4">
-              <img src="/images/logo.png" alt="TIN GROUP logo" className="w-14 h-14 rounded" />
+              <img src="/images/logo.png" alt="TIN GROUP logo" className="w-24 h-24 rounded shadow-lg border-4 border-yellow-400 bg-white p-1" />
               <h3 className="text-xl font-bold">TIN GROUP SERVICE KFT</h3>
             </div>
             <p className="text-gray-400 text-sm">
