@@ -15,9 +15,14 @@ export default function Header() {
   return (
     <header className="bg-white shadow-md">
       <nav className="max-w-6xl mx-auto px-4 md:px-8 py-4 flex justify-between items-center">
-        <Link href="/" className="flex items-center gap-3">
-          <Image src="/images/logo.png" alt="TIN GROUP logo" width={88} height={88} className="rounded shadow-lg border-4 border-yellow-400 bg-white p-1" />
-          <span className="font-bold text-2xl text-blue-600">TIN GROUP</span>
+        <Link href="/" className="flex items-center gap-4 group">
+          <span className="relative inline-block">
+            <span className="absolute inset-0 rounded-full bg-gradient-to-tr from-yellow-400 via-blue-400 to-blue-700 p-[3px] group-hover:scale-105 group-hover:shadow-xl transition-transform duration-300"></span>
+            <span className="relative block rounded-full bg-white">
+              <Image src="/images/logo.png" alt="TIN GROUP logo" width={88} height={88} className="rounded-full shadow-lg border-2 border-white" />
+            </span>
+          </span>
+          <span className="font-extrabold text-3xl text-blue-700 drop-shadow-sm tracking-tight group-hover:text-yellow-400 transition-colors duration-300">TIN GROUP</span>
         </Link>
 
         {/* Desktop Navigation */}
