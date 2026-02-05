@@ -18,13 +18,21 @@ export default function About() {
           <div>
             <h2 className="text-3xl font-bold mb-6 text-gray-800">Our Story</h2>
             <p className="text-gray-600 mb-4">
-              Founded in 2014, TIN GROUP SERVICE began with a simple mission: to provide exceptional, affordable cleaning services to residential and commercial clients in our community.
-            </p>
-            <p className="text-gray-600 mb-4">
-              What started as a small operation has grown into a trusted name in professional cleaning. Today, we serve hundreds of satisfied customers with a team of dedicated professionals committed to excellence.
-            </p>
-            <p className="text-gray-600">
-              We believe that a clean space is a happy space. That's why we go above and beyond to ensure every job is done right, using eco-friendly products and proven cleaning techniques.
+              Tin Group Services Kft is a registered hospitality and professional cleaning company operating in Hungary under the authorization of the Hungarian Labour Authority.</p>
+
+              <p className="text-gray-600 mb-4">Although the company was officially registered in September 2025, our operational experience in the cleaning and housekeeping industry dates back to 2023.
+               Over the years, we have built a strong foundation based on professionalism, reliability, and attention to detail.</p>
+
+              <p className="text-gray-600 mb-4">We currently work with a dedicated team of over 30 trained cleaning and housekeeping professionals, each with a minimum of three years of hands on experience.
+                 Our team is carefully selected, well supervised, and committed to delivering consistent, high quality service across all assignments.</p>
+
+              <p className="text-gray-600 mb-4"> Tin Group Services Kft provides cleaning and housekeeping services for residential homes, offices, hospitality facilities, and commercial spaces. We understand that cleanliness is not only about appearance, but also about comfort, health, productivity, and peace of mind.
+
+              Our approach is client focused. </p>
+              <p className="text-gray-600 mb-4">We assess each space individually, apply professional cleaning standards, and tailor our services to meet the specific needs of our clients. Whether serving private individuals or companies, we maintain the same level of excellence, discretion, and professionalism.
+              At Tin Group Services Kft, we believe that clean spaces create better experiences. This belief is reflected in our motto:
+              Tiszta Terek, Boldog Ügyfelek.
+              Clean Spaces, Happy Clients.
             </p>
           </div>
           <div className="bg-blue-100 rounded-lg p-8">
