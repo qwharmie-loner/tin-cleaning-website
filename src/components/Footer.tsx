@@ -13,7 +13,7 @@ export default function Footer() {
           <div>
             <div className="flex items-center gap-4 mb-4">
               <img src="/images/logo.png" alt="TIN GROUP logo" className="w-24 h-24 rounded shadow-lg border-4 border-yellow-400 bg-white p-1" />
-              <h3 className="text-xl font-bold">TIN GROUP SERVICES KFT</h3>
+              <h3 className="text-xl font-bold">TIN GROUP SERVICES KFT.</h3>
             </div>
             <p className="text-gray-400 text-sm">
               Clean Spaces, Happy Clients! Professional cleaning services for hotels, offices, apartments, industrial facilities, and commercial dishwashing. Eco-friendly solutions for a cleaner tomorrow.
@@ -76,7 +76,7 @@ export default function Footer() {
 
           {/* Copyright */}
           <div className="text-center text-gray-400 text-sm">
-            <p>&copy; {currentYear} TIN GROUP SERVICES. All rights reserved.</p>
+            <p>&copy; {currentYear} TIN GROUP SERVICES KFT. All rights reserved.</p>
             <div className="mt-4 space-x-4">
               <a href="#" className="hover:text-white transition">Privacy Policy</a>
               <span>|</span>

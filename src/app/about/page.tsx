@@ -7,8 +7,8 @@ export default function About() {
       {/* Header Section */}
       <section className="bg-gradient-to-r from-yellow-400 via-blue-600 to-blue-800 text-white py-16 px-4 md:px-8">
         <div className="max-w-6xl mx-auto">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">About TIN GROUP SERVICES</h1>
-          <p className="text-xl text-blue-100">Trusted cleaning professionals since 2014</p>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">About TIN GROUP SERVICES KFT.</h1>
+          <p className="text-xl text-blue-100">Trusted cleaning professionals since 2023</p>
         </div>
       </section>
 
