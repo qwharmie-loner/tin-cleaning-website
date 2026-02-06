@@ -128,11 +128,11 @@ export default function Portfolio() {
           <h2 className="text-3xl font-bold text-center mb-12 text-gray-800">Our Portfolio Stats</h2>
           <div className="grid md:grid-cols-4 gap-8 text-center">
             <div>
-              <div className="text-4xl font-bold text-blue-600 mb-2">1000+</div>
-              <p className="text-gray-600">Projects Completed</p>
+              <div className="text-4xl font-bold text-blue-600 mb-2">100+</div>
+              <p className="text-gray-600">Projects (Cleaning) Completed</p>
             </div>
             <div>
-              <div className="text-4xl font-bold text-blue-600 mb-2">500+</div>
+              <div className="text-4xl font-bold text-blue-600 mb-2">50+</div>
               <p className="text-gray-600">Happy Clients</p>
             </div>
             <div>
@@ -140,7 +140,7 @@ export default function Portfolio() {
               <p className="text-gray-600">Satisfaction Rate</p>
             </div>
             <div>
-              <div className="text-4xl font-bold text-blue-600 mb-2">10+</div>
+              <div className="text-4xl font-bold text-blue-600 mb-2">3+</div>
               <p className="text-gray-600">Years in Business</p>
             </div>
           </div>
