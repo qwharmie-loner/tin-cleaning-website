@@ -12,7 +12,7 @@ export default function Home() {
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-yellow-400 via-blue-600 to-blue-800 text-white py-20 px-4 md:px-8">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6">TIN GROUP SERVICES KFT</h1>
+          <h1 className="text-5xl md:text-6xl font-bold mb-6">TIN GROUP SERVICES KFT.</h1>
           <p className="text-xl md:text-2xl mb-4 text-blue-100">
             <AnimatedServiceText 
               englishText="Clean Spaces, Happy Clients !" 
