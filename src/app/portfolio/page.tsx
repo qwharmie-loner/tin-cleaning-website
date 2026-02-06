@@ -50,13 +50,13 @@ const testimonials = [
   {
     name: 'Sarah Johnson',
     role: 'Homeowner',
-    text: 'TIN GROUP SERVICE transformed my home! The team was professional, efficient, and thorough. I highly recommend their services.',
+    text: 'TIN GROUP SERVICES transformed my home! The team was professional, efficient, and thorough. I highly recommend their services.',
     rating: 5
   },
   {
     name: 'Michael Chen',
     role: 'Office Manager',
-    text: 'We switched to TIN GROUP SERVICE for our office cleaning and couldn\'t be happier. Our workplace has never looked better.',
+    text: 'We switched to TIN GROUP SERVICES for our office cleaning and couldn\'t be happier. Our workplace has never looked better.',
     rating: 5
   },
   {

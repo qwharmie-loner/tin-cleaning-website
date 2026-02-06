@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "TIN GROUP SERVICE - Professional Cleaning Services",
+  title: "TIN GROUP SERVICES - Professional Cleaning Services",
   description: "TIN GROUP SERVICE — Clean Spaces, Happy Clients! Professional cleaning for hotels, offices, apartments, industrial facilities, and commercial dishwashing.",
   icons: {
     icon: '/favicon.ico',
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     shortcut: '/favicon.ico',
   },
   openGraph: {
-    title: 'TIN GROUP SERVICE - Professional Cleaning Services',
+    title: 'TIN GROUP SERVICES - Professional Cleaning Services',
     description:
       'Clean Spaces, Happy Clients! Professional cleaning for hotels, offices, apartments, industrial facilities, and commercial dishwashing.',
     images: ['/images/logo.png'],

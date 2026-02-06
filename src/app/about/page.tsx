@@ -7,7 +7,7 @@ export default function About() {
       {/* Header Section */}
       <section className="bg-gradient-to-r from-yellow-400 via-blue-600 to-blue-800 text-white py-16 px-4 md:px-8">
         <div className="max-w-6xl mx-auto">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">About TIN GROUP SERVICE</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">About TIN GROUP SERVICES</h1>
           <p className="text-xl text-blue-100">Trusted cleaning professionals since 2014</p>
         </div>
       </section>
@@ -39,15 +39,15 @@ export default function About() {
             <h3 className="text-2xl font-bold mb-6 text-gray-800">By The Numbers</h3>
             <div className="space-y-4">
               <div className="flex items-center">
-                <span className="text-4xl font-bold text-blue-600 mr-4">10+</span>
+                <span className="text-4xl font-bold text-blue-600 mr-4">3+</span>
                 <span className="text-gray-600">Years of Experience</span>
               </div>
               <div className="flex items-center">
-                <span className="text-4xl font-bold text-blue-600 mr-4">500+</span>
+                <span className="text-4xl font-bold text-blue-600 mr-4">50+</span>
                 <span className="text-gray-600">Satisfied Customers</span>
               </div>
               <div className="flex items-center">
-                <span className="text-4xl font-bold text-blue-600 mr-4">1000+</span>
+                <span className="text-4xl font-bold text-blue-600 mr-4">100+</span>
                 <span className="text-gray-600">Cleanings Completed</span>
               </div>
               <div className="flex items-center">
