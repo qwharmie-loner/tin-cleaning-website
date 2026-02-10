@@ -11,6 +11,9 @@ export default function Header() {
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
+  const closeMenu = () => {
+    setIsOpen(false);
+  };
 
   return (
     <header className="bg-white shadow-md">
@@ -59,19 +62,19 @@ export default function Header() {
       {/* Mobile Navigation */}
       {isOpen && (
         <div className="md:hidden bg-gray-50 px-4 py-4 space-y-4">
-          <Link href="/" className="block text-gray-700 hover:text-blue-600 transition">
+          <Link href="/" onClick={closeMenu} className="block text-gray-700 hover:text-blue-600 transition">
             Home
           </Link>
-          <Link href="/services" className="block text-gray-700 hover:text-blue-600 transition">
+          <Link href="/services" onClick={closeMenu} className="block text-gray-700 hover:text-blue-600 transition">
             Services
           </Link>
-          <Link href="/portfolio" className="block text-gray-700 hover:text-blue-600 transition">
+          <Link href="/portfolio" onClick={closeMenu} className="block text-gray-700 hover:text-blue-600 transition">
             Portfolio
           </Link>
-          <Link href="/about" className="block text-gray-700 hover:text-blue-600 transition">
+          <Link href="/about" onClick={closeMenu} className="block text-gray-700 hover:text-blue-600 transition">
             About
           </Link>
-          <Link href="/contact">
+          <Link href="/contact" onClick={closeMenu}>
             <button className="w-full bg-gradient-to-r from-yellow-400 to-blue-600 text-white px-6 py-2 rounded-lg hover:opacity-95 transition">
               Contact
             </button>
