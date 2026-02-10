@@ -64,11 +64,7 @@ export default function Home() {
                 preload="metadata"
                 poster="/videos/hero-poster.jpg"
               >
-<<<<<<< HEAD
                 <source src="/intro.mp4" type="video/mp4" />
-=======
-                <source src="/public/intro.MP4" type="video/mp4" />
->>>>>>> 2efda17d7b8885308834744069d43d9253b34a9e
                 Your browser does not support the video tag.
               </video>
             </div>
