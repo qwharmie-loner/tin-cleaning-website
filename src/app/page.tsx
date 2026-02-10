@@ -64,7 +64,7 @@ export default function Home() {
                 preload="metadata"
                 poster="/videos/hero-poster.jpg"
               >
-                <source src="TINKFT.MP4" type="video/mp4" />
+                <source src="/public/intro.MP4" type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
             </div>
