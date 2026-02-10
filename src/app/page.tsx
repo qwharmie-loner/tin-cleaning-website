@@ -53,6 +53,25 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Video Section */}
+      <section className="py-16 px-4 md:px-8 bg-white">
+        <div className="max-w-5xl mx-auto">
+          <div className="rounded-2xl overflow-hidden shadow-lg border border-gray-100">
+            <div className="relative w-full aspect-video bg-gray-100">
+              <video
+                className="w-full h-full object-cover"
+                controls
+                preload="metadata"
+                poster="/videos/hero-poster.jpg"
+              >
+                <source src="TINKFT.MP4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Services Preview */}
       <section className="py-16 px-4 md:px-8">
         <div className="max-w-6xl mx-auto">
