@@ -1,5 +1,16 @@
 import Link from 'next/link';
-import { Hotel, Building2, Home, Zap, UtensilsCrossed } from 'lucide-react';
+import {
+  Hotel,
+  Building2,
+  Home,
+  Zap,
+  UtensilsCrossed,
+  Briefcase,
+  GraduationCap,
+  TrendingUp,
+  Users,
+  Wallet
+} from 'lucide-react';
 import AnimatedServiceText from '@/components/AnimatedServiceText';
 
 const services = [
@@ -40,6 +51,49 @@ const services = [
   }
 ];
 
+const additionalServices = [
+  {
+    id: 1,
+    title: 'Business Consultation',
+    icon: Briefcase,
+    description:
+      'Practical guidance on operations, compliance, and market entry in Hungary with a results-focused approach.',
+    features: ['Operations support', 'Compliance guidance', 'Market entry insights', 'Growth planning']
+  },
+  {
+    id: 2,
+    title: 'Education Assistance',
+    icon: GraduationCap,
+    description:
+      'Support for individuals navigating education opportunities in Hungary, from documentation to integration.',
+    features: ['Process guidance', 'Documentation support', 'Application help', 'Integration assistance']
+  },
+  {
+    id: 3,
+    title: 'Business Development',
+    icon: TrendingUp,
+    description:
+      'Strategic services that strengthen operations, improve efficiency, and identify growth opportunities.',
+    features: ['Strategic planning', 'Operational structuring', 'Efficiency improvements', 'Partnership support']
+  },
+  {
+    id: 4,
+    title: 'Work Opportunities (Hospitality)',
+    icon: Users,
+    description:
+      'Workforce management and recruitment support connecting qualified individuals with hospitality roles.',
+    features: ['Recruitment support', 'Workforce management', 'Hospitality roles', 'Quality standards']
+  },
+  {
+    id: 5,
+    title: 'Financial Consulting',
+    icon: Wallet,
+    description:
+      'Basic financial guidance focused on budgeting, cost planning, and sound operational decisions.',
+    features: ['Budget planning', 'Cost control', 'Resource management', 'Financial guidance']
+  }
+];
+
 export default function Services() {
   return (
     <main className="min-h-screen bg-white">
@@ -65,6 +119,47 @@ export default function Services() {
               const IconComponent = service.icon;
               return (
                 <div key={service.id} className="bg-gray-50 p-8 rounded-lg border border-gray-200 hover:shadow-lg transition">
+                  <div className="flex items-center mb-4">
+                    <IconComponent className="w-12 h-12 text-blue-600 mr-4" />
+                    <h3 className="text-2xl font-bold text-gray-800">{service.title}</h3>
+                  </div>
+                  <p className="text-gray-600 mb-6">{service.description}</p>
+                  <ul className="space-y-2 mb-6">
+                    {service.features.map((feature, idx) => (
+                      <li key={idx} className="text-gray-700 flex items-center">
+                        <span className="text-blue-600 mr-2">✓</span> {feature}
+                      </li>
+                    ))}
+                  </ul>
+                  <Link href="/contact">
+                    <button className="text-blue-600 font-semibold hover:text-blue-800 transition">
+                      Learn More →
+                    </button>
+                  </Link>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* Additional Services */}
+      <section className="bg-gray-50 py-16 px-4 md:px-8">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-800">OUR ADDITIONAL SERVICES</h2>
+            <p className="text-gray-600 mt-3 max-w-3xl mx-auto">
+              Expanded support services to help individuals and organizations succeed in Hungary.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {additionalServices.map((service) => {
+              const IconComponent = service.icon;
+              return (
+                <div
+                  key={service.id}
+                  className="bg-white p-8 rounded-lg border border-gray-200 hover:shadow-lg transition"
+                >
                   <div className="flex items-center mb-4">
                     <IconComponent className="w-12 h-12 text-blue-600 mr-4" />
                     <h3 className="text-2xl font-bold text-gray-800">{service.title}</h3>
