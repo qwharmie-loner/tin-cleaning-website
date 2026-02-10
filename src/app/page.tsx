@@ -55,7 +55,7 @@ export default function Home() {
 
       {/* Video Section */}
       <section className="py-16 px-4 md:px-8 bg-white">
-        <div className="max-w-3xl mx-auto">
+        <div className="max-w-sm md:max-w-md mx-auto">
           <div className="rounded-2xl overflow-hidden shadow-lg border border-gray-100">
             <div className="relative w-full aspect-[9/16] bg-gray-100">
               <video
