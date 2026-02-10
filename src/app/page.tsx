@@ -5,6 +5,7 @@ import { CheckCircle, Star, Users } from 'lucide-react';
 
 import AnimatedServiceText from '@/components/AnimatedServiceText';
 import AnimatedCarousel from '@/components/AnimatedCarousel';
+import AutoPlayVideo from '@/components/AutoPlayVideo';
 
 export default function Home() {
   return (
@@ -58,15 +59,11 @@ export default function Home() {
         <div className="max-w-sm md:max-w-md mx-auto">
           <div className="rounded-2xl overflow-hidden shadow-lg border border-gray-100">
             <div className="relative w-full aspect-[9/16] bg-gray-100">
-              <video
+              <AutoPlayVideo
                 className="w-full h-full object-cover"
-                controls
-                preload="metadata"
+                src="/intro.mp4"
                 poster="/videos/hero-poster.jpg"
-              >
-                <source src="/intro.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
+              />
             </div>
           </div>
         </div>
