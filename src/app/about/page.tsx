@@ -8,7 +8,7 @@ export default function About() {
       <section className="bg-gradient-to-r from-yellow-400 via-blue-600 to-blue-800 text-white py-16 px-4 md:px-8">
         <div className="max-w-6xl mx-auto">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">About TIN GROUP SERVICES KFT.</h1>
-          <p className="text-xl text-blue-100">Trusted cleaning professionals since 2023</p>
+          <p className="text-xl text-blue-100">Trusted professionals since 2023</p>
         </div>
       </section>
 
@@ -18,7 +18,7 @@ export default function About() {
           <div>
             <h2 className="text-3xl font-bold mb-6 text-gray-800">Our Story</h2>
             <p className="text-gray-600 mb-4">
-              Tin Group Services Kft is a registered hospitality and professional cleaning company operating in Hungary under the authorization of the Hungarian Labour Authority.</p>
+              Tin Group Services Kft is a registered consultation,hospitality and professional cleaning company operating in Hungary under the authorization of the Hungarian Labour Authority.</p>
 
               <p className="text-gray-600 mb-4">Although the company was officially registered in September 2025, our operational experience in the cleaning and housekeeping industry dates back to 2023.
                Over the years, we have built a strong foundation based on professionalism, reliability, and attention to detail.</p>
