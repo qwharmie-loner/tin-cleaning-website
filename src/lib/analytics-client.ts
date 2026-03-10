@@ -85,15 +85,16 @@ export async function trackAnalyticsEvent(payload: AnalyticsEventPayload) {
   }
 
   const { browser, os } = parseUserAgent();
+  const utmParams = getUtmParams();
   const body = {
     sessionId: readStoredSessionId(),
     eventName: payload.eventName,
     pagePath: payload.pagePath,
     pageTitle: payload.pageTitle || document.title,
     referrer: payload.referrer,
-    utmSource: payload.utmSource,
-    utmMedium: payload.utmMedium,
-    utmCampaign: payload.utmCampaign,
+    utmSource: payload.utmSource || utmParams.utmSource,
+    utmMedium: payload.utmMedium || utmParams.utmMedium,
+    utmCampaign: payload.utmCampaign || utmParams.utmCampaign,
     deviceType: payload.deviceType || getDeviceType(window.innerWidth),
     browser: payload.browser || browser,
     os: payload.os || os,
@@ -101,7 +102,6 @@ export async function trackAnalyticsEvent(payload: AnalyticsEventPayload) {
     viewportHeight: payload.viewportHeight || window.innerHeight,
     engagementTimeMs: payload.engagementTimeMs,
     meta: payload.meta || {},
-    ...getUtmParams(),
   };
 
   try {

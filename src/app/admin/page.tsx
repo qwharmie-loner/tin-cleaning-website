@@ -308,7 +308,7 @@ export default function AdminDashboard() {
 
     setIsAuthenticated(true);
     startLogoutTimer(expiresAt);
-  }, []);
+  }, [startLogoutTimer]);
 
   useEffect(() => {
     if (!isAuthenticated) {
@@ -316,7 +316,7 @@ export default function AdminDashboard() {
     }
 
     void fetchDashboardData();
-  }, [clearLogoutTimer, isAuthenticated, refreshAdminSession]);
+  }, [isAuthenticated]);
 
   useEffect(() => {
     if (!isAuthenticated) {
@@ -345,7 +345,7 @@ export default function AdminDashboard() {
         window.removeEventListener(eventName, handleActivity);
       });
     };
-  }, [isAuthenticated]);
+  }, [clearLogoutTimer, isAuthenticated, refreshAdminSession]);
 
   useEffect(() => {
     return () => {
