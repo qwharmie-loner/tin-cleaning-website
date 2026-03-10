@@ -1,10 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { createClient } from '@supabase/supabase-js';
-
-const supabase = createClient(
-  process.env.SUPABASE_URL || '',
-  process.env.SUPABASE_ANON_KEY || ''
-);
+import { supabase } from '@/lib/supabase';
 
 export async function PATCH(
   request: NextRequest,
@@ -36,7 +31,7 @@ export async function PATCH(
     }
 
     return NextResponse.json({ contact: data?.[0] });
-  } catch (error) {
+  } catch {
     return NextResponse.json(
       { error: 'Failed to update contact' },
       { status: 500 }
@@ -45,7 +40,7 @@ export async function PATCH(
 }
 
 export async function DELETE(
-  request: NextRequest,
+  _request: NextRequest,
   { params }: { params: Promise<{ id: string }> }
 ) {
   try {
@@ -64,7 +59,7 @@ export async function DELETE(
     }
 
     return NextResponse.json({ success: true });
-  } catch (error) {
+  } catch {
     return NextResponse.json(
       { error: 'Failed to delete contact' },
       { status: 500 }

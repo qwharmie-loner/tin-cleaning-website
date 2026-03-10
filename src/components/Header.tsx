@@ -30,19 +30,19 @@ export default function Header() {
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex gap-8 items-center">
-          <Link href="/" className="text-gray-700 hover:text-blue-600 transition">
+          <Link href="/" className="text-gray-700 hover:text-blue-600 transition" data-analytics-event="nav_click" data-analytics-label="home" data-analytics-location="header-desktop">
             Home
           </Link>
-          <Link href="/services" className="text-gray-700 hover:text-blue-600 transition">
+          <Link href="/services" className="text-gray-700 hover:text-blue-600 transition" data-analytics-event="nav_click" data-analytics-label="services" data-analytics-location="header-desktop">
             Services
           </Link>
-          <Link href="/portfolio" className="text-gray-700 hover:text-blue-600 transition">
+          <Link href="/portfolio" className="text-gray-700 hover:text-blue-600 transition" data-analytics-event="nav_click" data-analytics-label="portfolio" data-analytics-location="header-desktop">
             Portfolio
           </Link>
-          <Link href="/about" className="text-gray-700 hover:text-blue-600 transition">
+          <Link href="/about" className="text-gray-700 hover:text-blue-600 transition" data-analytics-event="nav_click" data-analytics-label="about" data-analytics-location="header-desktop">
             About
           </Link>
-          <Link href="/contact">
+          <Link href="/contact" data-analytics-event="cta_click" data-analytics-label="contact" data-analytics-location="header-desktop">
             <button className="bg-gradient-to-r from-yellow-400 to-blue-600 text-white px-6 py-2 rounded-lg hover:opacity-95 transition">
               Contact
             </button>
@@ -62,19 +62,19 @@ export default function Header() {
       {/* Mobile Navigation */}
       {isOpen && (
         <div className="md:hidden bg-gray-50 px-4 py-4 space-y-4">
-          <Link href="/" onClick={closeMenu} className="block text-gray-700 hover:text-blue-600 transition">
+          <Link href="/" onClick={closeMenu} className="block text-gray-700 hover:text-blue-600 transition" data-analytics-event="nav_click" data-analytics-label="home" data-analytics-location="header-mobile">
             Home
           </Link>
-          <Link href="/services" onClick={closeMenu} className="block text-gray-700 hover:text-blue-600 transition">
+          <Link href="/services" onClick={closeMenu} className="block text-gray-700 hover:text-blue-600 transition" data-analytics-event="nav_click" data-analytics-label="services" data-analytics-location="header-mobile">
             Services
           </Link>
-          <Link href="/portfolio" onClick={closeMenu} className="block text-gray-700 hover:text-blue-600 transition">
+          <Link href="/portfolio" onClick={closeMenu} className="block text-gray-700 hover:text-blue-600 transition" data-analytics-event="nav_click" data-analytics-label="portfolio" data-analytics-location="header-mobile">
             Portfolio
           </Link>
-          <Link href="/about" onClick={closeMenu} className="block text-gray-700 hover:text-blue-600 transition">
+          <Link href="/about" onClick={closeMenu} className="block text-gray-700 hover:text-blue-600 transition" data-analytics-event="nav_click" data-analytics-label="about" data-analytics-location="header-mobile">
             About
           </Link>
-          <Link href="/contact" onClick={closeMenu}>
+          <Link href="/contact" onClick={closeMenu} data-analytics-event="cta_click" data-analytics-label="contact" data-analytics-location="header-mobile">
             <button className="w-full bg-gradient-to-r from-yellow-400 to-blue-600 text-white px-6 py-2 rounded-lg hover:opacity-95 transition">
               Contact
             </button>

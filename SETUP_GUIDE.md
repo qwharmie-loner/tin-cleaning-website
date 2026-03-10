@@ -87,6 +87,34 @@ create policy "Allow inserts from public" on contacts
 
 create policy "Allow authenticated reads" on contacts
   for select using (auth.role() = 'authenticated');
+
+create table if not exists analytics_events (
+  id bigint primary key generated always as identity,
+  session_id text not null,
+  event_name text not null,
+  page_path text not null,
+  page_title text,
+  referrer text,
+  utm_source text,
+  utm_medium text,
+  utm_campaign text,
+  device_type text,
+  browser text,
+  os text,
+  viewport_width integer,
+  viewport_height integer,
+  engagement_time_ms integer,
+  meta jsonb default '{}'::jsonb,
+  created_at timestamp default now()
+);
+
+alter table analytics_events enable row level security;
+
+create policy "Allow analytics inserts from public" on analytics_events
+  for insert with check (true);
+
+create policy "Allow analytics reads for authenticated users" on analytics_events
+  for select using (auth.role() = 'authenticated');
 ```
 
 4. **Get your credentials**:

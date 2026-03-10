@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { Phone, Mail, MapPin, Clock, CheckCircle, AlertCircle } from 'lucide-react';
+import { trackAnalyticsEvent } from '@/lib/analytics-client';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -42,14 +43,37 @@ export default function Contact() {
       const data = await response.json();
 
       if (response.ok) {
+        await trackAnalyticsEvent({
+          eventName: 'contact_submit_success',
+          pagePath: '/contact',
+          meta: {
+            serviceType: formData.serviceType || 'unspecified',
+          },
+        });
         setStatusType('success');
         setStatusMessage('Message sent successfully! We will contact you soon.');
         setFormData({ name: '', email: '', phone: '', serviceType: '', message: '' });
       } else {
+        await trackAnalyticsEvent({
+          eventName: 'contact_submit_error',
+          pagePath: '/contact',
+          meta: {
+            serviceType: formData.serviceType || 'unspecified',
+            status: response.status,
+          },
+        });
         setStatusType('error');
         setStatusMessage(data.message || 'Failed to send message. Please try again.');
       }
     } catch (error) {
+      await trackAnalyticsEvent({
+        eventName: 'contact_submit_error',
+        pagePath: '/contact',
+        meta: {
+          serviceType: formData.serviceType || 'unspecified',
+          status: 'network_error',
+        },
+      });
       setStatusType('error');
       setStatusMessage('An error occurred. Please try again later.');
       console.error('Error:', error);
@@ -218,7 +242,7 @@ export default function Contact() {
             <div className="bg-blue-50 p-6 rounded-lg mt-8">
               <h3 className="font-bold text-gray-800 mb-3">Service Area</h3>
               <p className="text-gray-600 text-sm">
-                We proudly serve the greater metropolitan area and surrounding communities. If you're unsure whether we service your location, please don't hesitate to contact us.
+                We proudly serve the greater metropolitan area and surrounding communities. If you&apos;re unsure whether we service your location, please don&apos;t hesitate to contact us.
               </p>
             </div>
           </div>
@@ -238,15 +262,15 @@ export default function Contact() {
       {/* CTA Section */}
       <section className="bg-gradient-to-r from-yellow-400 to-blue-600 text-white py-16 px-4 md:px-8">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">Don't Wait for Clean</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">Don&apos;t Wait for Clean</h2>
           <p className="text-lg mb-8 text-blue-100">Schedule your cleaning service today and experience the difference</p>
           <div className="flex gap-4 justify-center">
-            <a href="tel:+36705452856">
+            <a href="tel:+36705452856" data-analytics-event="phone_click" data-analytics-label="contact-page-call-now" data-analytics-location="contact-cta">
               <button className="bg-white text-blue-600 px-8 py-3 rounded-lg font-bold hover:bg-blue-50 transition">
                 Call Now
               </button>
             </a>
-            <Link href="/services">
+            <Link href="/services" data-analytics-event="cta_click" data-analytics-label="view-services" data-analytics-location="contact-cta">
               <button className="border-2 border-white text-white px-8 py-3 rounded-lg font-bold hover:bg-blue-700 transition">
                 View Services
               </button>

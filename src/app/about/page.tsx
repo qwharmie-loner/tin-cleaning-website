@@ -82,7 +82,7 @@ export default function About() {
             <div className="bg-white p-8 rounded-lg shadow-md text-center">
               <Heart className="w-12 h-12 text-blue-600 mx-auto mb-4" />
               <h3 className="text-xl font-bold mb-2 text-gray-800">Care</h3>
-              <p className="text-gray-600">We treat your space like it's our own home</p>
+              <p className="text-gray-600">We treat your space like it&apos;s our own home</p>
             </div>
           </div>
         </div>

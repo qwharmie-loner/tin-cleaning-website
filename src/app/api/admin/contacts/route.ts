@@ -1,12 +1,7 @@
-import { NextRequest, NextResponse } from 'next/server';
-import { createClient } from '@supabase/supabase-js';
+import { NextResponse } from 'next/server';
+import { supabase } from '@/lib/supabase';
 
-const supabase = createClient(
-  process.env.SUPABASE_URL || '',
-  process.env.SUPABASE_ANON_KEY || ''
-);
-
-export async function GET(request: NextRequest) {
+export async function GET() {
   try {
     const { data, error } = await supabase
       .from('contacts')
@@ -21,7 +16,7 @@ export async function GET(request: NextRequest) {
     }
 
     return NextResponse.json({ contacts: data || [] });
-  } catch (error) {
+  } catch {
     return NextResponse.json(
       { error: 'Failed to fetch contacts' },
       { status: 500 }

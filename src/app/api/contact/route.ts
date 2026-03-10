@@ -1,12 +1,6 @@
 import { NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
-import { createClient } from '@supabase/supabase-js';
-
-// Initialize Supabase client
-const supabase = createClient(
-  process.env.SUPABASE_URL!,
-  process.env.SUPABASE_ANON_KEY!
-);
+import { supabase } from '@/lib/supabase';
 
 // Initialize Nodemailer transporter
 const transporter = nodemailer.createTransport({
@@ -42,7 +36,7 @@ export async function POST(req: Request) {
     }
 
     // Store in Supabase
-    const { data, error: dbError } = await supabase
+    const { error: dbError } = await supabase
       .from('contacts')
       .insert([
         {

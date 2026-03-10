@@ -111,7 +111,7 @@ export default function Portfolio() {
                     <Star key={i} className="w-5 h-5 text-yellow-400 fill-yellow-400" />
                   ))}
                 </div>
-                <p className="text-gray-600 mb-4 italic">"{testimonial.text}"</p>
+                <p className="text-gray-600 mb-4 italic">&quot;{testimonial.text}&quot;</p>
                 <div className="border-t pt-4">
                   <p className="font-bold text-gray-800">{testimonial.name}</p>
                   <p className="text-gray-600 text-sm">{testimonial.role}</p>
