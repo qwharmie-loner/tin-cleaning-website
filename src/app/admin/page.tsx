@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { BarChart3, Eye, RefreshCw, Trash2, Users } from 'lucide-react';
 
 interface Contact {
@@ -47,6 +47,9 @@ interface AnalyticsResponse {
 }
 
 type DateFilter = 'all' | 'today' | '7days' | '30days' | 'older';
+
+const ADMIN_SESSION_KEY = 'tin_group_admin_session_expires_at';
+const ADMIN_SESSION_DURATION_MS = 30 * 60 * 1000;
 
 const emptyAnalytics: AnalyticsResponse = {
   overview: {
@@ -122,6 +125,42 @@ export default function AdminDashboard() {
   const [filterStatus, setFilterStatus] = useState('all');
   const [filterDate, setFilterDate] = useState<DateFilter>('all');
   const [searchQuery, setSearchQuery] = useState('');
+  const logoutTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const clearLogoutTimer = useCallback(() => {
+    if (logoutTimerRef.current) {
+      clearTimeout(logoutTimerRef.current);
+      logoutTimerRef.current = null;
+    }
+  }, []);
+
+  const logout = useCallback(() => {
+    clearLogoutTimer();
+    window.localStorage.removeItem(ADMIN_SESSION_KEY);
+    setIsAuthenticated(false);
+    setIsLoading(true);
+    setAnalytics(emptyAnalytics);
+  }, [clearLogoutTimer]);
+
+  const startLogoutTimer = useCallback((expiresAt: number) => {
+    clearLogoutTimer();
+    const remainingTime = expiresAt - Date.now();
+
+    if (remainingTime <= 0) {
+      logout();
+      return;
+    }
+
+    logoutTimerRef.current = setTimeout(() => {
+      logout();
+    }, remainingTime);
+  }, [clearLogoutTimer, logout]);
+
+  const refreshAdminSession = useCallback(() => {
+    const expiresAt = Date.now() + ADMIN_SESSION_DURATION_MS;
+    window.localStorage.setItem(ADMIN_SESSION_KEY, String(expiresAt));
+    startLogoutTimer(expiresAt);
+  }, [startLogoutTimer]);
 
   const fetchDashboardData = async () => {
     try {
@@ -160,6 +199,7 @@ export default function AdminDashboard() {
     if (password === 'tingroupadmin2024') {
       setIsAuthenticated(true);
       setPassword('');
+      refreshAdminSession();
       return;
     }
 
@@ -253,12 +293,65 @@ export default function AdminDashboard() {
   });
 
   useEffect(() => {
+    const storedExpiry = window.localStorage.getItem(ADMIN_SESSION_KEY);
+    if (!storedExpiry) {
+      setIsLoading(false);
+      return;
+    }
+
+    const expiresAt = Number(storedExpiry);
+    if (!Number.isFinite(expiresAt) || expiresAt <= Date.now()) {
+      window.localStorage.removeItem(ADMIN_SESSION_KEY);
+      setIsLoading(false);
+      return;
+    }
+
+    setIsAuthenticated(true);
+    startLogoutTimer(expiresAt);
+  }, []);
+
+  useEffect(() => {
     if (!isAuthenticated) {
       return;
     }
 
     void fetchDashboardData();
+  }, [clearLogoutTimer, isAuthenticated, refreshAdminSession]);
+
+  useEffect(() => {
+    if (!isAuthenticated) {
+      clearLogoutTimer();
+      return;
+    }
+
+    const handleActivity = () => {
+      refreshAdminSession();
+    };
+
+    const events: Array<keyof WindowEventMap> = [
+      'click',
+      'keydown',
+      'mousemove',
+      'scroll',
+      'touchstart',
+    ];
+
+    events.forEach((eventName) => {
+      window.addEventListener(eventName, handleActivity, { passive: true });
+    });
+
+    return () => {
+      events.forEach((eventName) => {
+        window.removeEventListener(eventName, handleActivity);
+      });
+    };
   }, [isAuthenticated]);
+
+  useEffect(() => {
+    return () => {
+      clearLogoutTimer();
+    };
+  }, [clearLogoutTimer]);
 
   if (!isAuthenticated) {
     return (
@@ -310,7 +403,7 @@ export default function AdminDashboard() {
               Refresh
             </button>
             <button
-              onClick={() => setIsAuthenticated(false)}
+              onClick={logout}
               className="rounded-lg bg-red-600 px-4 py-2 text-white"
             >
               Logout
