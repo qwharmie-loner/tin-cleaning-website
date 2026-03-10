@@ -1,23 +1,22 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
-import { usePathname, useSearchParams } from 'next/navigation';
+import { usePathname } from 'next/navigation';
 
 import { trackAnalyticsEvent } from '@/lib/analytics-client';
 
-function buildPagePath(pathname: string, searchParams: { toString(): string }) {
-  const query = searchParams.toString();
+function buildPagePath(pathname: string, search: string) {
+  const query = search.startsWith('?') ? search.slice(1) : search;
   return query ? `${pathname}?${query}` : pathname;
 }
 
 export default function AnalyticsTracker() {
   const pathname = usePathname();
-  const searchParams = useSearchParams();
   const pageEnterTimeRef = useRef<number>(0);
   const currentPageRef = useRef<string>('');
 
   useEffect(() => {
-    const pagePath = buildPagePath(pathname, searchParams);
+    const pagePath = buildPagePath(pathname, window.location.search);
     const previousPage = currentPageRef.current;
 
     if (previousPage) {
@@ -38,7 +37,7 @@ export default function AnalyticsTracker() {
       referrer: document.referrer || undefined,
       meta: previousPage ? { previousPage } : {},
     });
-  }, [pathname, searchParams]);
+  }, [pathname]);
 
   useEffect(() => {
     const handlePageHide = () => {
